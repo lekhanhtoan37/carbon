@@ -1,0 +1,163 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DEX Events Parser",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=carbon-dex-events-parser",
+                    "--package=carbon-dex-events-parser"
+                ],
+                "filter": {
+                    "name": "carbon-dex-events-parser",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "debug",
+                "RPC_WS_URL": "wss://api.mainnet-beta.solana.com",
+                "RPC_HTTP_URL": "https://api.mainnet-beta.solana.com",
+                "PUBLISHER_TYPE": "zmq",
+                "ZMQ_ENDPOINT": "tcp://*:5555"
+            },
+            "stopOnEntry": false,
+            "sourceLanguages": ["rust"],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DEX Events Parser (Hybrid Mode)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=carbon-dex-events-parser",
+                    "--package=carbon-dex-events-parser"
+                ],
+                "filter": {
+                    "name": "carbon-dex-events-parser",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "debug",
+                "RPC_WS_URL": "wss://api.mainnet-beta.solana.com",
+                "RPC_HTTP_URL": "https://api.mainnet-beta.solana.com",
+                "PUBLISHER_TYPE": "both",
+                "ZMQ_ENDPOINT": "tcp://*:5555",
+                "KAFKA_BROKERS": "localhost:9092",
+                "KAFKA_TIMEOUT_MS": "5000",
+                "DATASOURCE_TYPE": "hybrid"
+            },
+            "stopOnEntry": false,
+            "sourceLanguages": ["rust"],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DEX Events Parser (Devnet)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=carbon-dex-events-parser",
+                    "--package=carbon-dex-events-parser"
+                ],
+                "filter": {
+                    "name": "carbon-dex-events-parser",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "debug",
+                "RPC_WS_URL": "wss://api.devnet.solana.com",
+                "RPC_HTTP_URL": "https://api.devnet.solana.com",
+                "PUBLISHER_TYPE": "zmq",
+                "ZMQ_ENDPOINT": "tcp://*:5555"
+            },
+            "stopOnEntry": false,
+            "sourceLanguages": ["rust"],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DEX Events Parser (Kafka Only)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=carbon-dex-events-parser",
+                    "--package=carbon-dex-events-parser"
+                ],
+                "filter": {
+                    "name": "carbon-dex-events-parser",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "debug",
+                "RPC_WS_URL": "wss://api.mainnet-beta.solana.com",
+                "RPC_HTTP_URL": "https://api.mainnet-beta.solana.com",
+                "PUBLISHER_TYPE": "kafka",
+                "KAFKA_BROKERS": "localhost:9092",
+                "KAFKA_TIMEOUT_MS": "5000"
+            },
+            "stopOnEntry": false,
+            "sourceLanguages": ["rust"],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug DEX Events Parser (Custom RPC)",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=carbon-dex-events-parser",
+                    "--package=carbon-dex-events-parser"
+                ],
+                "filter": {
+                    "name": "carbon-dex-events-parser",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_LOG": "info",
+                "RPC_WS_URL": "${input:rpcWsUrl}",
+                "RPC_HTTP_URL": "${input:rpcHttpUrl}",
+                "PUBLISHER_TYPE": "zmq",
+                "ZMQ_ENDPOINT": "tcp://*:5555"
+            },
+            "stopOnEntry": false,
+            "sourceLanguages": ["rust"],
+            "console": "integratedTerminal"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "rpcWsUrl",
+            "description": "Enter WebSocket RPC URL",
+            "default": "wss://api.mainnet-beta.solana.com",
+            "type": "promptString"
+        },
+        {
+            "id": "rpcHttpUrl", 
+            "description": "Enter HTTP RPC URL",
+            "default": "https://api.mainnet-beta.solana.com",
+            "type": "promptString"
+        }
+    ]
+} 

@@ -1,0 +1,90 @@
+[package]
+name = "carbon-dex-events-parser"
+description = "Parse swap, liquidity, and pair events from all DEX platforms"
+license = { workspace = true }
+version = "0.1.0"
+edition = { workspace = true }
+repository = { workspace = true }
+
+[[bin]]
+name = "carbon-dex-events-parser"
+path = "src/main.rs"
+
+[dependencies]
+carbon-core = { workspace = true }
+carbon-rpc-block-subscribe-datasource = { workspace = true }
+carbon-log-metrics = { workspace = true }
+
+# ZeroMQ for data streaming
+zmq = "0.10"
+
+# Kafka for data streaming
+rdkafka = { version = "0.36", features = ["tokio"] }
+
+# All decoder dependencies
+carbon-raydium-amm-v4-decoder = { workspace = true }
+carbon-raydium-clmm-decoder = { workspace = true }
+carbon-raydium-cpmm-decoder = { workspace = true }
+carbon-raydium-stable-swap-decoder = { workspace = true }
+carbon-jupiter-swap-decoder = { workspace = true }
+carbon-orca-whirlpool-decoder = { workspace = true }
+carbon-meteora-dlmm-decoder = { workspace = true }
+carbon-meteora-pools-decoder = { workspace = true }
+carbon-meteora-damm-v2-decoder = { workspace = true }
+carbon-pumpfun-decoder = { workspace = true }
+carbon-pump-swap-decoder = { workspace = true }
+carbon-openbook-v2-decoder = { workspace = true }
+carbon-phoenix-v1-decoder = { workspace = true }
+carbon-fluxbeam-decoder = { workspace = true }
+carbon-lifinity-amm-v2-decoder = { workspace = true }
+carbon-stabble-stable-swap-decoder = { workspace = true }
+carbon-stabble-weighted-swap-decoder = { workspace = true }
+carbon-moonshot-decoder = { workspace = true }
+carbon-okx-dex-decoder = { workspace = true }
+carbon-gavel-decoder = { workspace = true }
+carbon-virtuals-decoder = { workspace = true }
+carbon-virtual-curve-decoder = { workspace = true }
+carbon-zeta-decoder = { workspace = true }
+carbon-kamino-farms-decoder = { workspace = true }
+carbon-kamino-lending-decoder = { workspace = true }
+carbon-kamino-vault-decoder = { workspace = true }
+carbon-marginfi-v2-decoder = { workspace = true }
+carbon-drift-v2-decoder = { workspace = true }
+carbon-marinade-finance-decoder = { workspace = true }
+carbon-boop-decoder = { workspace = true }
+carbon-sharky-decoder = { workspace = true }
+carbon-solayer-restaking-program-decoder = { workspace = true }
+carbon-mpl-core-decoder = { workspace = true }
+carbon-mpl-token-metadata-decoder = { workspace = true }
+carbon-token-program-decoder = { workspace = true }
+carbon-token-2022-decoder = { workspace = true }
+carbon-system-program-decoder = { workspace = true }
+carbon-associated-token-account-decoder = { workspace = true }
+carbon-address-lookup-table-decoder = { workspace = true }
+carbon-memo-program-decoder = { workspace = true }
+carbon-stake-program-decoder = { workspace = true }
+carbon-name-service-decoder = { workspace = true }
+carbon-raydium-launchpad-decoder = { workspace = true }
+carbon-raydium-liquidity-locking-decoder = { workspace = true }
+carbon-jupiter-dca-decoder = { workspace = true }
+carbon-jupiter-limit-order-decoder = { workspace = true }
+carbon-jupiter-limit-order-2-decoder = { workspace = true }
+carbon-jupiter-perpetuals-decoder = { workspace = true }
+
+# Standard dependencies  
+async-trait = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
+tokio-util = { workspace = true }
+futures = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+log = { workspace = true }
+env_logger = { workspace = true }
+dotenv = { workspace = true }
+solana-client = { workspace = true }
+solana-pubkey = { workspace = true }
+solana-instruction = { workspace = true }
+solana-native-token = { workspace = true }
+solana-commitment-config = { workspace = true }
+solana-transaction-status = { workspace = true }
+solana-hash = { workspace = true }

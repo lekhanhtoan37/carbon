@@ -83,13 +83,13 @@ carbon-raydium-amm-v4-decoder = { path = "decoders/raydium-amm-v4-decoder", vers
 carbon-raydium-clmm-decoder = { path = "decoders/raydium-clmm-decoder", version = "0.9.0" }
 carbon-raydium-cpmm-decoder = { path = "decoders/raydium-cpmm-decoder", version = "0.9.0" }
 carbon-raydium-launchpad-decoder = { path = "decoders/raydium-launchpad-decoder", version = "0.9.0" }
-carbon-raydium-liquidity-locking-decoder = { path = "decoders/carbon-raydium-liquidity-locking-decoder", version = "0.9.0" }
+carbon-raydium-liquidity-locking-decoder = { path = "decoders/raydium-liquidity-locking-decoder", version = "0.9.0" }
 carbon-raydium-stable-swap-decoder = { path = "decoders/raydium-stable-swap-decoder", version = "0.9.0" }
 carbon-sharky-decoder = { path = "decoders/sharky-decoder", version = "0.9.0" }
 carbon-solayer-restaking-program-decoder = { path = "decoders/solayer-restaking-program-decoder", version = "0.9.0" }
-carbon-stabble-stable-swap-decoder = { path = "decoders/carbon-stabble-stable-swap-decoder", version = "0.9.0" }
-carbon-stabble-weighted-swap-decoder = { path = "decoders/carbon-stabble-weighted-swap-decoder", version = "0.9.0" }
-carbon-stake-program-decoder = { path = "decoders/carbon-stake-program-decoder", version = "0.9.0" }
+carbon-stabble-stable-swap-decoder = { path = "decoders/stabble-stable-swap-decoder", version = "0.9.0" }
+carbon-stabble-weighted-swap-decoder = { path = "decoders/stabble-weighted-swap-decoder", version = "0.9.0" }
+carbon-stake-program-decoder = { path = "decoders/stake-program-decoder", version = "0.9.0" }
 carbon-system-program-decoder = { path = "decoders/system-program-decoder", version = "0.9.0" }
 carbon-token-2022-decoder = { path = "decoders/token-2022-decoder", version = "0.9.0" }
 carbon-token-program-decoder = { path = "decoders/token-program-decoder", version = "0.9.0" }
